@@ -1,0 +1,22 @@
+48.leetcode question
+
+solution:-
+
+class Solution {
+public:
+    void rotate(vector<vector<int>>& bhoki) {
+        int n = bhoki.size();
+        
+        // Transpose the matrix
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < bhoki[i].size(); j++) {
+                swap(bhoki[i][j], bhoki[j][i]);
+            }
+        }
+        
+        // Reverse each row
+        for (int i = 0; i < n; i++) {
+            reverse(bhoki[i].begin(), bhoki[i].end());
+        }
+    }
+};
