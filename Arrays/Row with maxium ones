@@ -1,0 +1,28 @@
+leetcode question:-2643
+
+solution:-class Solution {
+public:
+    vector<int> rowAndMaximumOnes(vector<vector<int>>& arr) {
+        vector<int> ans;
+        int n = arr.size();
+        int oneCount =0;
+        int RowNo=0;
+        for(int i=0;i<n;i++){
+            int count =0;
+            for(int j=0;j<arr[i].size();j++){
+                
+                if(arr[i][j]==1){
+                    count++;
+                }
+            }
+            if(count>oneCount){
+                oneCount=count;
+                RowNo =i;
+            }
+        }
+        ans.push_back(RowNo);
+        ans.push_back(oneCount);
+        return ans;
+
+    }
+};
